@@ -40,7 +40,7 @@ export default {
     async getAnswersBySurveyId(id) {
       const res = await fetch("/api/answer?surveyId=" + id)
       if (res.status === 200) {
-        this.answers = await res.json()
+        this.answers = await res.json()._embedded.answer
       }
     },
     pretty(value) {
