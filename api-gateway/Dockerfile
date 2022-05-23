@@ -6,6 +6,6 @@ RUN --mount=type=cache,target=/root/.m2 mvn -f /usr/src/app/pom.xml clean packag
 
 
 FROM adoptopenjdk/openjdk11:ubi
-COPY --from=build /usr/src/app/target/answer-service-1.0.0-SNAPSHOT.jar /usr/app/answer-service-1.0.0-SNAPSHOT.jar
-EXPOSE 9091
-ENTRYPOINT ["java","-jar","/usr/app/answer-service-1.0.0-SNAPSHOT.jar"]
+COPY --from=build /usr/src/app/target/api-gateway-1.0.0-SNAPSHOT.jar /usr/app/api-gateway-1.0.0-SNAPSHOT.jar
+EXPOSE 9090
+ENTRYPOINT ["java","-jar","/usr/app/api-gateway-1.0.0-SNAPSHOT.jar"]
