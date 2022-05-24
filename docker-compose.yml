@@ -8,7 +8,6 @@ services:
       - "27017:27017"
     networks:
       - survey-network
-    container_name: mongo-db
 
   discovery-service:
     build:
@@ -20,7 +19,6 @@ services:
       - "${HOME}/.m2:/root/.m2"
     networks:
       - survey-network
-    container_name: discovery-service
 
   api-gateway:
     build:
@@ -36,14 +34,13 @@ services:
       - discovery-service
     networks:
       - survey-network
-    container_name: api-gateway
 
   answer-service:
     build:
       context: ./answer-service
       dockerfile: Dockerfile
-    ports:
-      - "9091:9091"
+#    ports:
+#      - "9091:9091"
     volumes:
       - "${HOME}/.m2:/root/.m2"
     environment: # Pass environment variables to the service
@@ -56,14 +53,13 @@ services:
       - discovery-service
     networks:
       - survey-network
-    container_name: answer-service
 
   survey-service:
     build:
       context: ./survey-service
       dockerfile: Dockerfile
-    ports:
-      - "9092:9092"
+#    ports:
+#      - "9092:9092"
     volumes:
       - "${HOME}/.m2:/root/.m2"
     environment: # Pass environment variables to the service
@@ -76,7 +72,6 @@ services:
       - discovery-service
     networks:
       - survey-network
-    container_name: survey-service
 
 
 networks:

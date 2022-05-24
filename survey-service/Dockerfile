@@ -7,5 +7,5 @@ RUN --mount=type=cache,target=/root/.m2 mvn -f /usr/src/app/pom.xml clean packag
 
 FROM adoptopenjdk/openjdk11:ubi
 COPY --from=build /usr/src/app/target/survey-service-1.0.0-SNAPSHOT.jar /usr/app/survey-service-1.0.0-SNAPSHOT.jar
-EXPOSE 9092
+#EXPOSE 9092
 ENTRYPOINT ["java","-jar","/usr/app/survey-service-1.0.0-SNAPSHOT.jar"]
