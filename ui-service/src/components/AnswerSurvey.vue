@@ -134,7 +134,7 @@ export default {
         },
         body: JSON.stringify(req),
       })
-      if (res.status === 200) {
+      if (res.status >= 200 && res.status <300) {
         alert("Answer Sent")
       } else {
         alert("Answer Error!")

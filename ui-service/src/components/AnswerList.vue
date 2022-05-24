@@ -38,9 +38,12 @@ export default {
   },
   methods: {
     async getAnswersBySurveyId(id) {
-      const res = await fetch("/api/answer?surveyId=" + id)
+      const res = await fetch("/api/answer/search/findAllBySurveyId?surveyId=" + id)
       if (res.status === 200) {
-        this.answers = await res.json()._embedded.answer
+        const response =  await res.json()
+        console.log(response)
+        console.log(response._embedded)
+        this.answers = response._embedded.answer
       }
     },
     pretty(value) {

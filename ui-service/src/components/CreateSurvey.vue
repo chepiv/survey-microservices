@@ -121,13 +121,16 @@ export default {
             },
             body: JSON.stringify(surveyReq),
           })
-      if (res.status === 200) {
+      if (res.status >= 200 && res.status <300) {
         this.email = "";
         this.title = "";
         this.questions = [];
-        alert("Survey sent!")
+        let responseId = await res.json();
+        console.log(res)
+        console.log(responseId.id)
+        alert("Survey sent!" + responseId.id)
       } else {
-        alert("dupa")
+        alert("Error during send")
       }
     }
   }

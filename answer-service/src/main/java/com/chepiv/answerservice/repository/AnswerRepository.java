@@ -18,5 +18,6 @@ public interface AnswerRepository extends MongoRepository<Answer, String> {
     @Query(value = "{'survey.title': ?0}")
     List<Answer> findAllBySurveyTitle(String title);
 
+    @Query(value = "{ 'surveyId': ?0 }")
     List<Answer> findAllBySurveyId(@Param("surveyId") String surveyId);
 }
