@@ -1,13 +1,13 @@
 server:
   port: 9090
-logging:
-  level:
-    root: DEBUG
-    org.springframework.web: DEBUG
-    org.springframework.web.HttpLogging: DEBUG
-    org.springframework.security: DEBUG
-    org.springframework.security.oauth2: DEBUG
-    org.springframework.cloud.gateway: DEBUG
+#logging:
+#  level:
+#    root: DEBUG
+#    org.springframework.web: DEBUG
+#    org.springframework.web.HttpLogging: DEBUG
+#    org.springframework.security: DEBUG
+#    org.springframework.security.oauth2: DEBUG
+#    org.springframework.cloud.gateway: DEBUG
 
 spring:
   application:

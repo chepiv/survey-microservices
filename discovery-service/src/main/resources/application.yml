@@ -1,14 +1,14 @@
 server:
   port: 8761
-logging:
-  level:
-    root: DEBUG
-    org.springframework.web: DEBUG
-    org.springframework.web.HttpLogging: DEBUG
-    org.springframework.security: DEBUG
-    org.springframework.security.oauth2: DEBUG
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.cloud.netflix.eureka: DEBUG
+#logging:
+#  level:
+#    root: DEBUG
+#    org.springframework.web: DEBUG
+#    org.springframework.web.HttpLogging: DEBUG
+#    org.springframework.security: DEBUG
+#    org.springframework.security.oauth2: DEBUG
+#    org.springframework.cloud.gateway: DEBUG
+#    org.springframework.cloud.netflix.eureka: DEBUG
 
 spring:
   application:
