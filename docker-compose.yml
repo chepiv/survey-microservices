@@ -39,6 +39,14 @@ services:
     build:
       context: ./answer-service
       dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2048M
+        reservations:
+          cpus: '2.0'
+          memory: 2048M
 #    ports:
 #      - "9091:9091"
     volumes:
